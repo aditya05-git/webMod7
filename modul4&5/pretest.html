@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Data</title>
+    <script>
+        function validasi(){
+            let user = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
+
+            if(user == "admin1234" && password == "#5dhyi90"){
+                alert("Login Berhasil")
+            }else{
+                alert("Login Gagal")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <label for="user">Usename: </label>
+    <input id="user"  type="text" required><br><br>
+    <label for="password">Password: </label>
+    <input type="pass" required><br><br>
+    <input id="password" type="button" value="Login" onclick="validasi()">
+</body>
+</html>

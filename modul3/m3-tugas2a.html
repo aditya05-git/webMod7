@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Kamar</title>
+    <link rel="stylesheet" href="m3-tugas2.css">
+</head>
+<body>
+    <form>
+        <h1>Form Tambah Data Kamar</h1>
+        <table>
+            <tr>
+                <td><label for="id_kamar">ID Kamar:</label></td>
+                <td><input type="number" id="id_kamar" name="id_kamar" required /></td>
+            </tr>
+            <tr>
+                <td><label for="gambar_ruangan">Gambar Ruangan:</label></td>
+                <td><input type="file" id="gambar_ruangan" name="gambar_ruangan" accept="image/*" required /></td>
+            </tr>
+            <tr>
+                <td><label for="jenis_kamar">Jenis Kamar:</label></td>
+                <td>
+                    <select name="jenis_kamar" id="jenis_kamar" required>
+                        <option value="">--Pilih--</option>
+                        <option value="standar">Standar</option>
+                        <option value="deluxe">Deluxe</option>
+                        <option value="family">Family</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga:</label></td>
+                <td><input type="number" id="harga" name="harga" required /></td>
+            </tr>
+            <tr>
+                <td><label for="fasilitas">Fasilitas:</label></td>
+                <td><textarea id="fasilitas" name="fasilitas" rows="3" required></textarea></td>
+            </tr>
+        </table>
+        <div id="button-container">
+            <button type="submit" name="save" id="simpan" value="simpan">Simpan</button>
+            <button type="reset" name="cancel" id="batal" value="batal">Batal</button>
+        </div>
+    </form>
+</body>
+</html>

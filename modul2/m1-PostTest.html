@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Nilai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3712be;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #afbdb4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menambah Data Nilai Matakuliah</h1>
+        <form>
+            <label for="matakuliah">Mata Kuliah:</label>
+            <input type="text" id="matakuliah" name="matakuliah">
+            
+            <label for="dosen">Nama Dosen:</label>
+            <input type="text" id="dosen" name="dosen">
+            
+            <label for="sks">SKS:</label>
+            <input type="text" id="sks" name="sks">
+            
+            <label for="mahasiswa">Nama Mahasiswa:</label>
+            <input type="text" id="mahasiswa" name="mahasiswa">
+            
+            <label for="kehadiran">Jumlah Kehadiran:</label>
+            <input type="text" id="kehadiran" name="kehadiran">
+            
+            <label for="nilai_tugas">Nilai Tugas:</label>
+            <input type="text" id="nilai_tugas" name="nilai_tugas">
+            
+            <label for="nilai_quiz">Nilai Quiz:</label>
+            <input type="text" id="nilai_quiz" name="nilai_quiz">
+            
+            <label for="nilai_uts">Nilai UTS:</label>
+            <input type="text" id="nilai_uts" name="nilai_uts">
+            
+            <label for="nilai_uas">Nilai UAS:</label>
+            <input type="text" id="nilai_uas" name="nilai_uas">
+            
+            <label for="nilai_akhir">Nilai Akhir:</label>
+            <input type="text" id="nilai_akhir" name="nilai_akhir">
+            
+            <label for="nilai_huruf">Nilai Huruf:</label>
+            <input type="text" id="nilai_huruf" name="nilai_huruf">
+            
+            <button type="radio">Simpan</button>
+        </form>
+    </div>
+</body>
+</html>

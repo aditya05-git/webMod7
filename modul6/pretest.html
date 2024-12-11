@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreTest</title>
+    <script src="JS/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".tampil").hide();
+            $(".tampil").click(function (){
+                $(".logo").show("slow");
+                $(".sembunyi").show();
+                $(".tampil").hide();
+            });
+            $(".sembunyi").click(function (){
+                $(".logo").hide();
+                $(".sembunyi").hide();
+                $(".tampil").show("slow");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="logo"><img src="Logo_Uniku.jpg" alt="Logo UNIKU"></div>
+    <button class="tampil">Tampilkan</button>
+    <button class="sembunyi">Sembunyikan</button>
+</body>
+</html>

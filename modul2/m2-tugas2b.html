@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Fasilitas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            padding: 20px;
+            border-radius: 15px;
+            width: 500px;
+            background-color: rgba(217, 223, 226, 0.8);
+        }
+        td {
+            padding-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="time"] {
+            border: 0;
+            border-radius: 3px;
+            width: 100%;
+            padding: 5px;
+        }
+        #button-container {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            margin-right: 20px;            
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Form Tambah Data Fasilitas</h1>
+        <table>
+            <tr>
+                <td><label for="id_fasilitas">ID Fasilitas:</label></td>
+                <td><input type="number" id="id_fasilitas" name="id_fasilitas" required /></td>
+            </tr>
+            <tr>
+                <td><label for="nama_fasilitas">Nama Fasilitas:</label></td>
+                <td><input type="text" id="nama_fasilitas" name="nama_fasilitas" required /></td>
+            </tr>
+            <tr>
+                <td><label for="harga_weekend">Harga Weekend:</label></td>
+                <td><input type="number" id="harga_weekend" name="harga_weekend" required /></td>
+            </tr>
+            <tr>
+                <td><label for="harga_weekday">Harga Weekday:</label></td>
+                <td><input type="number" id="harga_weekday" name="harga_weekday" required /></td>
+            </tr>
+            <tr>
+                <td><label for="kuota">Kuota:</label></td>
+                <td><input type="number" id="kuota" name="kuota" required /></td>
+            </tr>
+            <tr>
+                <td><label for="jam_buka">Jam Buka:</label></td>
+                <td><input type="time" id="jam_buka" name="jam_buka" required /></td>
+            </tr>
+            <tr>
+                <td><label for="jam_tutup">Jam Tutup:</label></td>
+                <td><input type="time" id="jam_tutup" name="jam_tutup" required /></td>
+            </tr>
+        </table>
+        <div id="button-container">
+            <button type="submit" name="save" value="simpan">SIMPAN</button>
+            <button type="reset" name="cancel" value="batal">BATAL</button>
+        </div>
+    </form>
+</body>
+</html>

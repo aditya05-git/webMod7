@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logint</title>
+    <script>
+        function validasi(){
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+
+            if(username == "admin" && password == "123"){
+                alert("login sukses");
+                window.location.href = "index.html";
+            }else{
+                alert("login gagal")
+                window.location.href = "Login.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form>
+        <table border="0">
+            <tr>
+                <td><label for="username">Username: </label></td>
+                <td><input type="text" id="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password: </label></td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="validasi()">Submit</button></td>
+                <td><button type="reset">Batal</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

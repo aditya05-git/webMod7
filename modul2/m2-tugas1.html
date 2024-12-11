@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Teks</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            background-color: #f4f4f4;
+            padding-left: 20px;
+            padding-top: 2px;
+            border-radius: 30px;
+            width: 500px;
+            height: max-content;
+        }
+        td{
+            padding-bottom: 10px;
+        }
+        input[type="text"], input[type="number"]{
+            border: 0;
+            border-radius: 3px;
+            width: 300px;
+            height: 20px;
+        }
+        #durasi_menginap{
+            width: 60px;
+        }
+        #button-container{
+            display: flex;
+            justify-content: center;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form style="background-color: rgba(217, 223, 226, 0.8);">
+        <h1>Form Pemesanan</h1>
+        <table border="0">
+            <tr>
+                <td><label for="id_pemesanan">Id Pemesanan:</label></td>
+                <td>
+                    <input type="number" id="id_Pemesanan" name="id_pemesanan" pattern="[0-9]*" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nm_pemesan">Nama Pemesan:</label></td>
+                <td>
+                    <input type="text" id="nm_pemesan" name="nama_pemesan" maxlength="35" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="no_antrian">Nomor Antrian:</label></td>
+                <td>
+                    <input type="number" id="no_antrian" name="no_antrian" pattern="[0-9]*" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tipe_kamar">Tipe Kamar:</label></td>
+                <td>
+                    <select name="Tipe Kamar" id="tipe_kamar">
+                        <option value="-">--Pilih--</option>
+                        <option value="-">STANDAR</option>
+                        <option value="-">DELUXE</option>
+                        <option value="-">FAMILY</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga:</label></td>
+                <td>
+                    <input type="text" id="harga" name="harga" pattern="^[0-9]+$" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tgl_pesan">Tanggal Pesan:</label></td>
+                <td>
+                    <input type="date" id="tgl_pesan" name="tgl_pesan" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="durasi_menginap">Durasi Menginap:</label></td>
+                <td>
+                    <input type="number" id="durasi_menginap" name="durasi_menginap" pattern="^[0-9]+$" required /> Hari
+                </td>
+            </tr>
+            <tr>
+                <td><label for="breakfast">Termasuk Breakfast:</label></td>
+                <td>
+                    <input type="checkbox" value="Ya"> Ya
+                </td>
+            </tr>
+            <tr>
+                <td><label for="total_bayar">Total Bayar:</label></td>
+                <td>
+                    <input type="text" id="total_bayar" name="total_bayar" pattern="^[0-9]+$" required />
+                </td>
+            </tr>
+        </table>
+        <div id="button-container">
+            <button type="submit" name="save" value="simpan">SIMPAN</button>
+            <button type="reset" name="cancel" value="batal">BATAL</button>
+        </div>
+        
+    </form>
+</body>
+</html>

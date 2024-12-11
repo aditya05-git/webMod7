@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hit() {
+            let golongan = document.getElementById("gol").value;
+            let jml_anak = parseInt(document.getElementById("anak").value) || 0;
+            let persen_tunjangan = 0;
+            let gaji_pokok = 0;
+
+            if (golongan === "I") {
+                persen_tunjangan = 0.05;
+                gaji_pokok = 250000;
+            } else if (golongan === "II") {
+                persen_tunjangan = 0.10;
+                gaji_pokok = 300000;
+            } else if (golongan === "III") {
+                persen_tunjangan = 0.15;
+                gaji_pokok = 350000;
+            }
+
+            let tunjangan = (jml_anak * gaji_pokok) * persen_tunjangan;
+            let gaji_bersih = gaji_pokok + tunjangan;
+
+            document.getElementById("gapok").value = "Rp. " + gaji_pokok.toFixed(2);
+            document.getElementById("tunjangan").value = "Rp. " + tunjangan.toFixed(2);
+            document.getElementById("gaji").value = "Rp. " + gaji_bersih.toFixed(2);
+        }
+    </script>
+    <style>
+        h4{
+            text-align: center;
+            margin: 0;
+        }
+        label{
+            display: flex;
+            width: 125px
+        }
+        #gol{
+            display: flex;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        <table  border="1">
+            <tr>
+                <td colspan="2" ><h4>PERHITUNGAN GAJI</h4></td>
+            </tr>
+            <tr>
+                <td><label for="gol">Golongan</label></td>
+                <td>
+                    <select id="gol">
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="anak">Jumlah anak</label></td>
+                <td><input type="text" id="anak" size="10" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="hitung" value="Hitung" onclick="hit()">
+                    <input type="reset" id="batal" value="Cancel">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="gapok">Gaji Pokok</label></td>
+                <td><input type="text" id="gapok" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="tunjangan">Tunjangan</label></td>
+                <td><input type="text" id="tunjangan" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="gaji">Gaji bersih</label></td>
+                <td><input type="text" id="gaji" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

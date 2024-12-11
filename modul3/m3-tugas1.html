@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Teks</title>
+    <link rel="stylesheet" href="m3-tugas1.css">
+</head>
+<body>
+    <form>
+        <h1>Form Pemesanan</h1>
+        <table border="0">
+            <tr>
+                <td><label for="id_pemesanan">Id Pemesanan:</label></td>
+                <td>
+                    <input type="number" id="id_Pemesanan" name="id_pemesanan" pattern="[0-9]*" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nm_pemesan">Nama Pemesan:</label></td>
+                <td>
+                    <input type="text" id="nm_pemesan" name="nama_pemesan" maxlength="35" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="no_antrian">Nomor Antrian:</label></td>
+                <td>
+                    <input type="number" id="no_antrian" name="no_antrian" pattern="[0-9]*" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tipe_kamar">Tipe Kamar:</label></td>
+                <td>
+                    <select name="Tipe Kamar" id="tipe_kamar">
+                        <option value="-">--Pilih--</option>
+                        <option value="-">STANDAR</option>
+                        <option value="-">DELUXE</option>
+                        <option value="-">FAMILY</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga:</label></td>
+                <td>
+                    <input type="text" id="harga" name="harga" pattern="^[0-9]+$" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tgl_pesan">Tanggal Pesan:</label></td>
+                <td>
+                    <input type="date" id="tgl_pesan" name="tgl_pesan" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="durasi_menginap">Durasi Menginap:</label></td>
+                <td>
+                    <input type="number" id="durasi_menginap" name="durasi_menginap" pattern="^[0-9]+$" required /> Hari
+                </td>
+            </tr>
+            <tr>
+                <td><label for="breakfast">Termasuk Breakfast:</label></td>
+                <td>
+                    <input type="checkbox" value="Ya"> Ya
+                </td>
+            </tr>
+            <tr>
+                <td><label for="total_bayar">Total Bayar:</label></td>
+                <td>
+                    <input type="text" id="total_bayar" name="total_bayar" pattern="^[0-9]+$" required />
+                </td>
+            </tr>
+        </table>
+        <div id="button-container">
+            <button type="submit" id="save" value="simpan">Simpan</button>
+            <button type="reset" id="cancel" value="batal">Batal</button>
+        </div>
+        
+    </form>
+</body>
+</html>

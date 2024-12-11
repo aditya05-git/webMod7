@@ -1,0 +1,20 @@
+img{
+    width: 200px;
+    height: 300px;
+}
+body{
+    padding: 10px;
+    display: flex;
+    background-color: yellow;
+}
+#container{
+    height: 100%;
+    padding-left: 20px;
+    background-color: yellow;
+}
+details summary{
+    color: blue;
+}
+details[open] summary{
+    display: none;
+}

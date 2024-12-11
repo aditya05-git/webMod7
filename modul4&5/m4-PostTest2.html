@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Penjualan Barang</title>
+    <style>
+        h3{
+            margin: 0;
+            text-align: center;
+            font-weight: normal;
+        }
+        #persen_potongan{
+            width: 50px;
+        }
+        #tampilkan{
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+    <script>
+        function info() {
+            let kd_brg = document.getElementById("kode").value;
+            let hrg = 0;
+            let nm_brg = "";
+            if (kd_brg === "B001") {
+                nm_brg = "Buku";
+                hrg = 5000;
+            } else if (kd_brg === "B002") {
+                nm_brg = "Penggaris";
+                hrg = 1500;
+            } else if (kd_brg === "B003") {
+                nm_brg = "Pulpen";
+                hrg = 2000;
+            }
+            document.getElementById("nm_barang").value = nm_brg;
+            document.getElementById("harga").value = hrg;
+            hitung(); 
+        }
+
+        function hitung() {
+            let hrg = parseFloat(document.getElementById("harga").value) || 0;
+            let jml_bli = parseInt(document.getElementById("jml_beli").value) || 0;
+            let persen = 0;
+            
+            let jml_bayar = hrg * jml_bli;
+
+            if (jml_bli <= 10) {
+                persen = 5;
+            } else if (jml_bli <= 20) {
+                persen = 10;
+            } else if (jml_bli >= 21) {
+                persen = 15;
+            }
+
+            let potongan = (persen / 100) * jml_bayar;
+            let total = jml_bayar - potongan;
+
+            document.getElementById("jml_bayar").value = jml_bayar;
+            document.getElementById("persen_potongan").value = persen;
+            document.getElementById("potongan").value = potongan;
+            document.getElementById("total").value = total;
+        }
+        function cetak() {
+            const kode = document.getElementById("kode").value;
+            const namaBarang = document.getElementById("nm_barang").value;
+            const harga = document.getElementById("harga").value;
+            const jumlahBeli = document.getElementById("jml_beli").value;
+            const jumlahBayar = document.getElementById("jml_bayar").value;
+            const potongan = document.getElementById("potongan").value;
+            const total = document.getElementById("total").value;
+
+            document.getElementById("nota").innerHTML = `
+                <h1>Nota Penjualan</h1>
+                <p>Kode Barang  = ${kode}</p>
+                <p>Nama Barang  = ${namaBarang}</p>
+                <p>Harga Barang = ${harga}</p>
+                <p>Jumlah Beli = ${jumlahBeli}</p>
+                <hr>
+                <p>Jumlah Bayar = ${jumlahBayar}</p>
+                <p>Potongan = ${potongan}</p>
+                <hr>
+                <p>Total Bayar = ${total}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <td colspan="2">
+                    <h3>Data Penjualan Barang</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kode">Kode</label></td>
+                <td>
+                    <select name="kode" id="kode" onchange="info()">
+                        <option>--Pilih Salah Satu--</option>
+                        <option>B001</option>
+                        <option>B002</option>
+                        <option>B003</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jml_beli">Jumlah Beli</label></td>
+                <td><input type="number" id="jml_beli" value="0" 
+                    min="0" onchange="hitung()"></td>
+            </tr>
+            <tr>
+                <td><label for="nm_barang">Nama Barang</label></td>
+                <td><input type="text" id="nm_barang" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga</label></td>
+                <td><input type="text" id="harga"></td>
+            </tr>
+            <tr>
+                <td><label for="jml_bayar">Jumlah bayar</label></td>
+                <td><input type="text" id="jml_bayar" value="0" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="potongan">Potongan</label>
+                <input type="number" id="persen_potongan">%</td>
+                <td><input type="text" id="potongan" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="total">Total Bayar</label></td>
+                <td><input type="text" id="total" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="TAMPILKAN" id="tampilkan" onclick="cetak()"></td>
+            </tr>
+        </table>
+    </form>
+    <div id="nota"></div>
+</body>
+</html>
